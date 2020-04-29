@@ -242,6 +242,12 @@ func alertPOSTHandler(c *gin.Context) {
 		c.Writer.WriteHeader(http.StatusBadRequest)
 		return
 	}
+	
+	subject := string(c.GetHeader("SnsSubject"))
+	if subject != nil && *subject != "" {
+		snsSubject = subject
+	}
+	
 	requestString := string(requestData)
 
 	if templatePath != nil && tmpH != nil {
