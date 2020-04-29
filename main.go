@@ -269,6 +269,8 @@ func alertPOSTHandler(c *gin.Context) {
 
 	log.Debugf("Using topic ARN: %s", topicArn)
 	log.Debugln("+------------------  A L E R T  J S O N  -------------------+")
+	log.Debugf("%s", topicArn)
+	log.Debugf("%s", snsSubject)
 	log.Debugf("%s", requestString)
 	log.Debugln("+-----------------------------------------------------------+")
 
